@@ -13,6 +13,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
+          display1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w400,
+            letterSpacing: 2.0,
+            fontSize: 40.0,
+          ),
+          display2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
           button: TextStyle(color: kButtonColor),
           headline: TextStyle(
             color: Colors.black,

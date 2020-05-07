@@ -57,6 +57,33 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(),
+                    child: RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                          text: "Welcome back,\n",
+                          style: Theme.of(context).textTheme.display1,
+                        ),
+                        TextSpan(
+                          text: "Samatar",
+                          style: Theme.of(context).textTheme.display2,
+                        ),
+                      ]),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Spacer(),
+            Spacer(),
+            Spacer(),
+            Spacer(),
           ],
         ),
       ),

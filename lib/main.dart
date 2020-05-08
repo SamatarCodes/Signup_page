@@ -30,6 +30,13 @@ class MyApp extends StatelessWidget {
             fontSize: 20.0,
           ),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.black.withOpacity(.30),
+            ),
+          ),
+        ),
       ),
       home: LoginPage(),
     );

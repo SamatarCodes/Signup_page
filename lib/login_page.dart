@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
-          child: Column(
-            children: <Widget>[
-              Expanded(
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 15.0, horizontal: 20.0),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     CircleAvatar(
                       backgroundImage: AssetImage('images/sam.png'),
@@ -57,63 +60,138 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
-              Expanded(
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(),
-                      child: RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                            text: "Welcome back,\n",
-                            style: Theme.of(context).textTheme.display1,
-                          ),
-                          TextSpan(
-                            text: "Samatar",
-                            style: Theme.of(context).textTheme.display2,
-                          ),
-                        ]),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
+            ),
+            Spacer(),
+            Expanded(
+              flex: 4,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 15.0, horizontal: 20.0),
                 child: Column(
                   children: <Widget>[
-                    TextField(
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.black.withOpacity(.30),
-                      ),
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(bottom: 7.0),
-                        hintText: "Email address",
-                      ),
+                    Row(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(),
+                          child: RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                text: "Welcome back,\n",
+                                style: Theme.of(context).textTheme.display1,
+                              ),
+                              TextSpan(
+                                text: "Samatar",
+                                style: Theme.of(context).textTheme.display2,
+                              ),
+                            ]),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 50.0,
                     ),
-                    TextField(
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(bottom: 7.0),
-                        hintText: "Password",
-                      ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        TextField(
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.black.withOpacity(.30),
+                          ),
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(bottom: 7.0),
+                            hintText: "Email address",
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        TextField(
+                          style: TextStyle(
+                            fontSize: 20.0,
+                          ),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(bottom: 7.0),
+                            hintText: "Password",
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30.0,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(
+                              FontAwesomeIcons.facebookF,
+                              size: 28.0,
+                            ),
+                            SizedBox(
+                              width: 20.0,
+                            ),
+                            Icon(
+                              FontAwesomeIcons.googlePlusG,
+                              size: 28.0,
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ],
                 ),
               ),
-//              Spacer(),
-//              Spacer(),
-//              Spacer(),
-//              Spacer(),
-//              Spacer(),
-            ],
-          ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 15.0, horizontal: 20.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Text('Forgot password?'),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Expanded(
+              child: Stack(
+                overflow: Overflow.visible,
+                alignment: Alignment.topRight,
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0XFFE9E9E9),
+                    ),
+                  ),
+                  Positioned(
+                    top: -30.0,
+                    right: 40.0,
+                    child: Container(
+                      padding: EdgeInsets.all(20.0),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Color(0XFF7BC9EC),
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          print('hello');
+                        },
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

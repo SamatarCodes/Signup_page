@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:signinpagemine/ReusableTextField.dart';
+import 'package:signinpagemine/Sign_in_option.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -27,41 +28,27 @@ class _LoginPageState extends State<LoginPage> {
                       radius: 30.0,
                     ),
                     Spacer(),
-                    Container(
-                      padding: EdgeInsets.only(bottom: 10.0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        border: Border(
-                          bottom: BorderSide(
-                            color: Colors.grey,
-                          ),
+                    Sign_in_option(
+                      signIn: 'Sign In',
+                      borderColor: Border(
+                        bottom: BorderSide(
+                          color: Colors.grey,
                         ),
                       ),
-                      child: Text(
-                        'Sign In',
-                        style: Theme.of(context).textTheme.headline,
-                      ),
+                      textStyle: Theme.of(context).textTheme.headline,
+                      onClick: () {
+                        print('hello');
+                      },
                     ),
                     SizedBox(
                       width: 40.0,
                     ),
-                    Container(
-                      padding: EdgeInsets.only(bottom: 10.0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-//                      border: Border(
-//                        bottom: BorderSide(
-//                          color: Colors.black,
-//                        ),
-//                      ),
-                      ),
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
+                    Sign_in_option(
+                      signIn: 'Sign Up',
+                      textStyle: kTextStyle,
+                      onClick: () {
+                        print('hello');
+                      },
                     ),
                   ],
                 ),

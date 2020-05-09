@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:signinpagemine/ReusableTextField.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,32 +100,21 @@ class LoginPage extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
-                        TextField(
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.black.withOpacity(.30),
-                          ),
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(bottom: 7.0),
-                            hintText: "Email address",
-                          ),
+                        ReusableTextField(
+                          hintText: 'Email address',
+                          obscureText: false,
                         ),
                         SizedBox(
                           height: 20.0,
                         ),
-                        TextField(
-                          style: TextStyle(
-                            fontSize: 20.0,
-                          ),
+                        ReusableTextField(
+                          hintText: 'Password',
                           obscureText: true,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(bottom: 7.0),
-                            hintText: "Password",
-                          ),
                         ),
                         SizedBox(
                           height: 30.0,
                         ),
+//                        SOCIAL MEDIA ICONS
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -168,7 +163,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: -3.0,
+                    top: -30.0,
                     right: 40.0,
                     child: Container(
                       padding: EdgeInsets.all(20.0),

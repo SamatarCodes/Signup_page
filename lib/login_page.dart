@@ -4,12 +4,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:signinpagemine/ReusableTextField.dart';
 import 'package:signinpagemine/Sign_in_option.dart';
 
+enum SignInOption {
+  signIn,
+  signUp,
+}
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  SignInOption selectedOption = SignInOption.signIn;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +42,14 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.grey,
                         ),
                       ),
-                      textStyle: Theme.of(context).textTheme.headline,
+//                      textStyle: Theme.of(context).textTheme.headline,
+                      textStyle: selectedOption == SignInOption.signIn
+                          ? kActiveColor
+                          : kTestingColor,
                       onClick: () {
-                        print('hello');
+                        setState(() {
+                          selectedOption = SignInOption.signIn;
+                        });
                       },
                     ),
                     SizedBox(
@@ -45,9 +57,13 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Sign_in_option(
                       signIn: 'Sign Up',
-                      textStyle: kTextStyle,
+                      textStyle: selectedOption == SignInOption.signUp
+                          ? kActiveColor
+                          : kTextStyle,
                       onClick: () {
-                        print('hello');
+                        setState(() {
+                          selectedOption = SignInOption.signUp;
+                        });
                       },
                     ),
                   ],

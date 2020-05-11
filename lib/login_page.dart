@@ -37,15 +37,21 @@ class _LoginPageState extends State<LoginPage> {
                     Spacer(),
                     Sign_in_option(
                       signIn: 'Sign In',
-                      borderColor: Border(
-                        bottom: BorderSide(
-                          color: Colors.grey,
-                        ),
-                      ),
+                      borderColor: selectedOption == SignInOption.signIn
+                          ? Border(
+                              bottom: BorderSide(
+                                color: Colors.grey,
+                              ),
+                            )
+                          : Border(
+                              bottom: BorderSide(
+                                color: Colors.transparent,
+                              ),
+                            ),
 //                      textStyle: Theme.of(context).textTheme.headline,
                       textStyle: selectedOption == SignInOption.signIn
                           ? kActiveColor
-                          : kTestingColor,
+                          : kInactiveColor,
                       onClick: () {
                         setState(() {
                           selectedOption = SignInOption.signIn;
@@ -57,6 +63,17 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Sign_in_option(
                       signIn: 'Sign Up',
+                      borderColor: selectedOption == SignInOption.signUp
+                          ? Border(
+                              bottom: BorderSide(
+                                color: Colors.grey,
+                              ),
+                            )
+                          : Border(
+                              bottom: BorderSide(
+                                color: Colors.transparent,
+                              ),
+                            ),
                       textStyle: selectedOption == SignInOption.signUp
                           ? kActiveColor
                           : kTextStyle,

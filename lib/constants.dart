@@ -7,7 +7,7 @@ const kTextStyle = TextStyle(
   fontWeight: FontWeight.w300,
 );
 
-const kTestingColor = TextStyle(
+const kInactiveColor = TextStyle(
   fontSize: 20.0,
 );
 

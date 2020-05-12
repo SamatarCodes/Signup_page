@@ -31,9 +31,13 @@ class _SignUpState extends State<SignUp> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/sam.png'),
-                      radius: 30.0,
+//                    CircleAvatar(
+//                      backgroundImage: AssetImage('images/sam.png'),
+//                      radius: 30.0,
+//                    ),
+                    Icon(
+                      FontAwesomeIcons.userAlt,
+                      color: kmainColor,
                     ),
                     Spacer(),
                     Sign_in_option(
@@ -109,9 +113,9 @@ class _SignUpState extends State<SignUp> {
                               ),
                               TextSpan(
                                 text:
-                                    "Enter your information below\n or login with a social account",
+                                    "Enter your information below\nor login with a social account",
                                 style: TextStyle(
-                                  fontSize: 20.0,
+                                  fontSize: 18.0,
                                   color: Colors.black,
                                 ),
                               ),

@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:signinpagemine/ReusableTextField.dart';
 import 'package:signinpagemine/Sign_in_option.dart';
-import 'signup_page.dart';
 
 enum SignInOption {
   signIn,
   signUp,
 }
 
-class LoginPage extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
-}
+  _SignUpState createState() => _SignUpState();
+} //  selectedOption
 
-class _LoginPageState extends State<LoginPage> {
-//  selectedOption
-  SignInOption selectedOption = SignInOption.signIn;
+SignInOption selectedOption = SignInOption.signUp;
 
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                           : kInactiveColor,
                       onClick: () {
                         setState(() {
+                          Navigator.pop(context);
                           selectedOption = SignInOption.signIn;
                         });
                       },
@@ -81,7 +81,6 @@ class _LoginPageState extends State<LoginPage> {
                           : kTextStyle,
                       onClick: () {
                         setState(() {
-                          Navigator.pushNamed(context, '/signup');
                           selectedOption = SignInOption.signUp;
                         });
                       },
@@ -92,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Spacer(),
             Expanded(
-              flex: 4,
+              flex: 6,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 15.0, horizontal: 20.0),
@@ -105,12 +104,16 @@ class _LoginPageState extends State<LoginPage> {
                           child: RichText(
                             text: TextSpan(children: [
                               TextSpan(
-                                text: "Welcome back,\n",
+                                text: "Hello Beautiful,\n",
                                 style: Theme.of(context).textTheme.display1,
                               ),
                               TextSpan(
-                                text: "Samatar",
-                                style: Theme.of(context).textTheme.display2,
+                                text:
+                                    "Enter your information below\n or login with a social account",
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  color: Colors.black,
+                                ),
                               ),
                             ]),
                           ),
@@ -132,6 +135,13 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         ReusableTextField(
                           hintText: 'Password',
+                          obscureText: true,
+                        ),
+                        SizedBox(
+                          height: 30.0,
+                        ),
+                        ReusableTextField(
+                          hintText: 'Password again',
                           obscureText: true,
                         ),
                         SizedBox(
@@ -160,18 +170,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 15.0, horizontal: 20.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    Text('Forgot password?'),
-                  ],
-                ),
-              ),
-            ),
+//            Expanded(
+//              child: Padding(
+//                padding: const EdgeInsets.symmetric(
+//                    vertical: 10.0, horizontal: 20.0),
+//                child: Row(
+//                  crossAxisAlignment: CrossAxisAlignment.end,
+//                  children: <Widget>[
+////                    Text('Forgot password?'),
+//                  ],
+//                ),
+//              ),
+//            ),
             SizedBox(
               height: 20.0,
             ),
@@ -193,7 +203,7 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: BoxDecoration(
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(10.0),
-                        color: Color(0XFF7BC9EC),
+                        color: kmainColor,
                       ),
                       child: GestureDetector(
                         onTap: () {

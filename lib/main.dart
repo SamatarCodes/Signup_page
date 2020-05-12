@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'login_page.dart';
+import 'signup_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,6 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => LoginPage(),
+        '/signup': (context) => SignUp(),
+      },
       title: 'Login Page',
       theme: ThemeData(
         primaryColor: Colors.blue,
@@ -38,7 +44,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: LoginPage(),
+      initialRoute: '/',
     );
   }
 }

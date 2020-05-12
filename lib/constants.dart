@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 
 const kButtonColor = Color(0XFF4E535F);
+const kmainColor = Color(0XFFEA99B8);
+
 const kTextStyle = TextStyle(
   fontSize: 20.0,
   fontWeight: FontWeight.w300,
